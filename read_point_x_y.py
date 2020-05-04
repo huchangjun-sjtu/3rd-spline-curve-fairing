@@ -46,3 +46,4 @@ def read_txt(work_file):
     print('read points txt successfully')
     return input_x, input_y
 
+

@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 import read_point_x_y as read_p
 
 
@@ -18,6 +19,7 @@ def para_maker(work_para, work_x, row_n, input_x, columns_n):
     for ii in range(row_n):
         start = 2
         for j in range(columns_n):
+
             if j < 4:
                 work_para[ii, j] = work_x[ii] ** j
             else:
@@ -25,11 +27,14 @@ def para_maker(work_para, work_x, row_n, input_x, columns_n):
                     work_para[ii, j] = (work_x[ii] - input_x[(start - 1)]) ** 3
                 start = start + 1
     pass
+
     print('make a parameter matrix successfully')
+
 
 
 # 自由端条件添加；在构建n+2方程组的前n个运行之后运行
 def free_end(work_para_x, work_para_y, input_x, input_n):
+
     """add free_end condition to matrix
     using the second derivative of two end is 0;
     add two equation to the parameter matrix
@@ -39,6 +44,7 @@ def free_end(work_para_x, work_para_y, input_x, input_n):
     :param input_n: number of coordinate value of x known
     :return: matrix added free_end condition
     """
+
     # 左端点处
     work_para_x[-2, 2] = 2.
     work_para_x[-2, 3] = 6. * x_in[0]
